@@ -1,0 +1,52 @@
+require 'pry'
+
+class Song
+
+  attr_accessor :name, :artist, :genre
+  @@count = 0
+  @@artists = []
+  @@genres = []
+  @@genre_count = {}
+  def initialize(song_name,artist,genre)
+    @name = song_name
+    @artist = artist
+    @genre = genre
+    @@count += 1
+    @@artists << artist
+    @@genres << genre
+  end
+
+  def self.count 
+    @@count
+  end
+
+  def self.artists
+    @@artists.uniq!
+  end
+  
+  def self.genres
+     @@genres.uniq!
+  end
+  
+  def self.genre_count
+   genre_count = Hash.new(0)
+   @@genres.each do |genre|
+      genre_count[genre]
+      @@genres += 1
+    end
+   end
+   
+   
+  
+  
+ end
+  
+
+  
+# An input array.
+#values = Array[4, 1, 2, 2, 3, 3]
+#print values, "\n"
+
+# Convert the array with uniq.
+#values.uniq!
+#print values, "\n"
